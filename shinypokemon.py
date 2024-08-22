@@ -4,26 +4,35 @@ import random
 class Sinnoh:
     @staticmethod
     def route201():
-        pokemonFound = random.randint(0,10) #Randomly generates num 1-10 and stores in pokemonFound
-        if pokemonFound in [0, 1, 2, 3]: #Simulates Starly being 40% chance of finding in the wild
+        pokemonFound = random.randint(1,100) #Randomly generates num 1-10 and stores in pokemonFound
+        if pokemonFound <= 40: #Simulates Starly being 40% chance of finding in the wild
             shiny = "Starly"
-        elif pokemonFound in [4, 5, 6, 7]:
+        elif pokemonFound <= 80:
             shiny = "Bidoof"
-        else:
+        else: #20%
             shiny = "Kricketot"
         return shiny
     @staticmethod
     def route202():
-        pokemonFound = random.randint(0,10)
-        if pokemonFound in [0, 1]:
+        pokemonFound = random.randint(1,100)
+        if pokemonFound <= 20:  #20% chance
             shiny = "Starly"
-        elif pokemonFound in [2, 3, 4, 5, 6,]:
+        elif pokemonFound <= 70:    #50% chance (from 21 to 70)
             shiny = "Bidoof"
         else:
-            shiny = "Shinx"
+            shiny = "Shinx" # 30% chance (from 71 to 100)
         return shiny
     def route203():
-        return
+        pokemonFound = random.randint(1,100)
+        if pokemonFound <= 35:  
+            shiny = "Starly"
+        elif pokemonFound <= 60:    
+            shiny = "Bidoof"
+        elif pokemonFound <= 85:
+            shiny = "Shinx"
+        else:
+            shiny = "Abra"
+        return shiny
     def route204():
         return
     def route205():
@@ -48,7 +57,7 @@ class Sinnoh:
             
 def main():
     #Prompts user to choose a route
-    print("Choose a route: \n201\n202")
+    print("Choose a route: \n201\n202\n203")
     try:
         #Takes user input as an int
         route_choice = int(input())   
@@ -62,6 +71,8 @@ def main():
         route = Sinnoh.route201
     elif route_choice == 202:
         route = Sinnoh.route202
+    elif route_choice == 203:
+        route = Sinnoh.route203
     else:
         print("Invalid route selected")
         exit(1)
@@ -98,7 +109,7 @@ def main():
     avg = total_encounters / shiny_num #Calculates average per phase
     print("\nTotal shinies: " + str(shiny_num) + " and it took " + str(total_encounters) + " encounters to find them all!")
     print("\nAverage Phase: " + str(avg))
-    print(f"The shiny found were: {', '.join(shinies_found)}")
+    print(f"The shinies found were: {', '.join(shinies_found)}")
 
 #Entry point
 if __name__ == "__main__":
@@ -112,3 +123,4 @@ if __name__ == "__main__":
 # Add in day night cycle odds based on computer time
 # Add in individual randomly generated stats for each shiny
 # Organize these shinies by most appeal in their stats
+# return stats about how many of certain pokemon you found
