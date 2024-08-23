@@ -1,17 +1,50 @@
 import random
+from datetime import datetime # importing py functions
 
 #Represents Sinnoh region and all its routes
 class Sinnoh:
+    
+    @staticmethod
+    def grab_user_time():
+        now = datetime.now()    #grabs user datetime from built in py function
+        current_hour = now.hour #grabs exact hour and places in current hour
+
+        if 20 <= current_hour or current_hour < 4: #8:00pm to 3:59am
+            return "night"
+        elif 4 <= current_hour < 10: #4am to 9:59am
+            return "morning"
+        else:   #10AM to 7:59pm
+            return "day"
+
+    @staticmethod
+    def encounter_pokemon(route_pokemon):
+        time_of_day = Sinnoh.grab_user_time()   #grabs user time and stores in time_of_day
+        pokemon_found = random.randint(1, 100)  #grabs random percentage and stores in pokemon_found
+
+        for pokemon, (chance, times) in route_pokemon.items(): #goes through list of pokemon based on time of day and chance
+            if time_of_day in times and pokemon_found <= chance: #checks if user time of day is equal to pokemon allowed to be out during that time based on the roll of the dice
+                return pokemon
+            pokemon_found -= chance
+        return "No Pokemon found"
+
     @staticmethod
     def route201():
-        pokemonFound = random.randint(1,100) #Randomly generates num 1-10 and stores in pokemonFound
-        if pokemonFound <= 40: #Simulates Starly being 40% chance of finding in the wild
-            shiny = "Starly"
-        elif pokemonFound <= 80:
-            shiny = "Bidoof"
-        else: #20%
-            shiny = "Kricketot"
-        return shiny
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day in ["morning", "night"]: #morning and night have same odds so they're combined
+            route_pokemon = {
+                "Starly": (50, ["morning", "night"]), #pokemon starly is the key paired with the values chance (50%) and time (morning and night)
+                "Bidoof": (40, ["morning", "night"]),
+                "Kricketot": (10, ["morning", "night"])
+            }
+        elif time_of_day == "day": #if time is day
+            route_pokemon = {
+                "Starly": (50, ["day"]),
+                "Bidoof": (50, ["day"]),
+            }
+        return Sinnoh.encounter_pokemon(route_pokemon) #returns the pokemon to put into the list
+
+#currently broken
     @staticmethod
     def route202():
         pokemonFound = random.randint(1,100)
@@ -22,6 +55,7 @@ class Sinnoh:
         else:
             shiny = "Shinx" # 30% chance (from 71 to 100)
         return shiny
+    #currently broken
     def route203():
         pokemonFound = random.randint(1,100)
         if pokemonFound <= 35:  
@@ -54,7 +88,6 @@ class Sinnoh:
     def route213():
         return
 
-            
 def main():
     #Prompts user to choose a route
     print("Choose a route: \n201\n202\n203")
@@ -67,13 +100,14 @@ def main():
         exit(0)
 
     #Assigns corresponding method based on user choice
-    if route_choice == 201:
-        route = Sinnoh.route201
-    elif route_choice == 202:
-        route = Sinnoh.route202
-    elif route_choice == 203:
-        route = Sinnoh.route203
-    else:
+    route_methods = {
+        201: Sinnoh.route201,
+        202: Sinnoh.route202,
+        203: Sinnoh.route203
+    }
+
+    route = route_methods.get(route_choice) #error checking for incorrect value
+    if route is None:
         print("Invalid route selected")
         exit(1)
     
@@ -117,10 +151,10 @@ if __name__ == "__main__":
 
 # To do list:
 
+# make different files to condense the code
 # add in more routes from sinnoh
 # Add in shiny charm probability
 # Add in other region compatibility
-# Add in day night cycle odds based on computer time
 # Add in individual randomly generated stats for each shiny
 # Organize these shinies by most appeal in their stats
 # return stats about how many of certain pokemon you found
