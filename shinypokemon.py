@@ -1,36 +1,35 @@
 from sinnohroutes import *
 
 def main():
-    #Prompts user to choose a route
-    print("Choose a route: \n201\n202\n203")
-    try:
-        #Takes user input as an int
-        route_choice = int(input())   
-    except ValueError:
-        #Error handling if char is entered as input instead of number
-        print("Not a valid number")
-        exit(0)
 
-    #Assigns corresponding method based on user choice
-    route_methods = {
-        201: Sinnoh.route201,
-        202: Sinnoh.route202,
-        203: Sinnoh.route203
-    }
+    while True:
+        print('Which region would you like to explore?')
+        print('Options: Sinnoh')
+        region = input().lower()
 
-    route = route_methods.get(route_choice) #error checking for incorrect value
-    if route is None:
-        print("Invalid route selected")
-        exit(1)
-    
+        region_methods = {
+            'sinnoh': sinnohMain
+        }
+
+        region_method = region_methods.get(region)
+
+        if region_method is None:
+            print("Invalid region selected. Please try again.")
+        else:
+            route_function = region_method()
+            if route_function is None:
+                continue
+            break
+
     #Askes how many should be hunted
-    print("How many shiny pokemon do you want to hunt?")
-    try:
-        shiny_num = int(input())
-    except ValueError:
-        print("Not a valid number")
-        exit(0)
-
+    while True:
+        print("How many shiny pokemon do you want to hunt?")
+        try:
+            shiny_num = int(input())
+            break
+        except ValueError:
+            print("Not a valid number")
+        
     #Holds total encounters during the hunts
     total_encounters = 0
     #List to hold the shinys caught
@@ -47,7 +46,7 @@ def main():
             count += 1  #increments number of shinies
             if shiny_value == encounter_value:
                 #Calls route to determine which pokemon was found when shiny value is hit
-                shiny = route()
+                shiny = route_function()
                 shinies_found.append(shiny) #Apends shiny to the list
                 break
         print("Shiny " + shiny + " found! It took " + str(count) + " encounters to find")

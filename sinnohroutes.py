@@ -146,3 +146,55 @@ class Sinnoh:
         return
     def route230():
         return
+    
+def sinnohMain():
+    #Prompts user to choose a route
+    print("Choose a route: \n201 202 203\n204 205 206\n207 208 209\n210 211 212\n213 214 215\n216 217 218\n219 220 221\n222 223 224\n225 226 227\n228 229 230")
+    try:
+        #Takes user input as an int
+        route_choice = int(input())   
+    except ValueError:
+        #Error handling if char is entered as input instead of number
+        print("Not a valid number")
+        return None
+
+    #Assigns corresponding method based on user choice
+    route_methods = {
+        201: Sinnoh.route201,
+        202: Sinnoh.route202,
+        203: Sinnoh.route203,
+        204: Sinnoh.route204,
+        205: Sinnoh.route205,
+        206: Sinnoh.route206,
+        207: Sinnoh.route207,
+        208: Sinnoh.route208,
+        209: Sinnoh.route209,
+        210: Sinnoh.route210,
+        211: Sinnoh.route211,
+        212: Sinnoh.route212,
+        213: Sinnoh.route213,
+        214: Sinnoh.route214,
+        215: Sinnoh.route215,
+        216: Sinnoh.route216,
+        217: Sinnoh.route217,
+        218: Sinnoh.route218,
+        219: Sinnoh.route219,
+        220: Sinnoh.route220,
+        221: Sinnoh.route221,
+        222: Sinnoh.route222,
+        223: Sinnoh.route223,
+        224: Sinnoh.route224,
+        225: Sinnoh.route225,
+        226: Sinnoh.route226,
+        227: Sinnoh.route227,
+        228: Sinnoh.route228,
+        229: Sinnoh.route229,
+        230: Sinnoh.route230
+    }
+
+    route = route_methods.get(route_choice) #error checking for incorrect value
+    if route is None:
+        print("Invalid route selected")
+        exit(1)
+
+    return route
