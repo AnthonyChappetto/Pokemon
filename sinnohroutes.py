@@ -196,10 +196,3 @@ def sinnohMain():
                 print("Invalid route number. Please choose a valid route.")
         except ValueError:
             print("Invalid input. Numbers only.")
-
-    route = route_methods.get(route_choice) #error checking for incorrect value
-    if route is None:
-        print("Invalid route selected")
-        exit(1)
-
-    return route
