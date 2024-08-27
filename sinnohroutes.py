@@ -63,6 +63,7 @@ class Sinnoh:
             }
         return Sinnoh.encounter_pokemon(route_pokemon) 
 
+    @staticmethod
     def route203():
         time_of_day = Sinnoh.grab_user_time()
 
@@ -92,6 +93,7 @@ class Sinnoh:
             }
         return Sinnoh.encounter_pokemon(route_pokemon) 
     
+    #Need to all be @staticmethod
     def route204():
         return
     def route205():
@@ -146,19 +148,8 @@ class Sinnoh:
         return
     def route230():
         return
-    
-def sinnohMain():
-    #Prompts user to choose a route
-    print("Choose a route: \n201 202 203\n204 205 206\n207 208 209\n210 211 212\n213 214 215\n216 217 218\n219 220 221\n222 223 224\n225 226 227\n228 229 230")
-    try:
-        #Takes user input as an int
-        route_choice = int(input())   
-    except ValueError:
-        #Error handling if char is entered as input instead of number
-        print("Not a valid number")
-        return None
 
-    #Assigns corresponding method based on user choice
+def sinnohMain():
     route_methods = {
         201: Sinnoh.route201,
         202: Sinnoh.route202,
@@ -191,6 +182,20 @@ def sinnohMain():
         229: Sinnoh.route229,
         230: Sinnoh.route230
     }
+
+    #Prompts user to choose a route
+    while True:
+        try:
+            print("Choose a route: \n201 202 203\n204 205 206\n207 208 209\n210 211 212\n213 214 215\n216 217 218\n219 220 221\n222 223 224\n225 226 227\n228 229 230")
+            route_choice = int(input("Enter route number: "))
+            route = route_methods.get(route_choice)   
+
+            if route:
+                return route
+            else:
+                print("Invalid route number. Please choose a valid route.")
+        except ValueError:
+            print("Invalid input. Numbers only.")
 
     route = route_methods.get(route_choice) #error checking for incorrect value
     if route is None:

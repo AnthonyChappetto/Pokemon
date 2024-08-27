@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
 # To do list:
 
-# make different files to condense the code
+# fix readme
 # add in more routes from sinnoh
 # Add in shiny charm probability
 # Add in other region compatibility
