@@ -149,6 +149,8 @@ class Sinnoh:
     def route230():
         return
 
+#References for calling all the routes when user inputs the identical route number
+@staticmethod
 def sinnohMain():
     route_methods = {
         201: Sinnoh.route201,
@@ -188,6 +190,7 @@ def sinnohMain():
         try:
             print("Choose a route: \n201 202 203\n204 205 206\n207 208 209\n210 211 212\n213 214 215\n216 217 218\n219 220 221\n222 223 224\n225 226 227\n228 229 230")
             route_choice = int(input("Enter route number: "))
+            #grabs route from route_methods
             route = route_methods.get(route_choice)   
 
             if route:
@@ -195,4 +198,5 @@ def sinnohMain():
             else:
                 print("Invalid route number. Please choose a valid route.")
         except ValueError:
+            #Error checking
             print("Invalid input. Numbers only.")
