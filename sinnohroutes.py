@@ -6,6 +6,12 @@ class Sinnoh:
     
     @staticmethod
     def grab_user_time():
+        """
+        Grabs the user's current time and returns a string representing the current time of day.
+
+        Returns:
+            str: The current time of day, either "morning", "day", or "night".
+        """
         now = datetime.now()    #grabs user datetime from built in py function
         current_hour = now.hour #grabs exact hour and places in current hour
 
@@ -18,6 +24,15 @@ class Sinnoh:
 
     @staticmethod
     def encounter_pokemon(route_pokemon):
+        """
+        Simulates an encounter with a wild pokemon in the Sinnoh region.
+
+        Parameters:
+            route_pokemon (dict): A dictionary of pokemon and their encounter rates, with time of day restrictions.
+
+        Returns:
+            str: The name of the pokemon that was encountered, or "No Pokemon found" if none were found.
+        """
         time_of_day = Sinnoh.grab_user_time()   #grabs user time and stores in time_of_day
         pokemon_found = random.randint(1, 100)  #grabs random percentage and stores in pokemon_found
 
@@ -29,6 +44,12 @@ class Sinnoh:
 
     @staticmethod
     def route201():
+        """
+        Simulates an encounter with a wild pokemon on Route 201 in the Sinnoh region.
+
+        Returns:
+            str: The name of the pokemon that was encountered, or "No Pokemon found" if none were found.
+        """
         time_of_day = Sinnoh.grab_user_time()
 
         if time_of_day in ["morning", "night"]: #morning and night have same odds so they're combined
@@ -85,7 +106,7 @@ class Sinnoh:
         else: #time of day = night
             route_pokemon = {
                 "Starly": (25, ["night"]),
-                "Shiny": (25, ["night"]),
+                "Shinx": (25, ["night"]),
                 "Abra": (15, ["night"]),
                 "Bidoof": (15, ["night"]),
                 "Zubat": (10, ["night"]),
@@ -93,11 +114,74 @@ class Sinnoh:
             }
         return Sinnoh.encounter_pokemon(route_pokemon) 
     
-    #Need to all be @staticmethod
+    #doesn't work properly handing north and south rn
+    @staticmethod
     def route204():
-        return
+        time_of_day = Sinnoh.grab_user_time()
+
+        print("South or North section of Route 204?")
+        north_south = input().lower()
+
+        if north_south == "south":
+            if time_of_day == "morning": 
+                route_pokemon = {
+                    "Starly": (25, ["morning"]), 
+                    "Bidoof": (25, ["morning"]),
+                    "Shinx": (15, ["morning"]),
+                    "Budew": (15, ["morning"]),
+                    "Wurmple": (10, ["morning"]),
+                    "Kricketot": (10, ["morning"])
+                }
+            elif time_of_day == "day":
+                route_pokemon = {
+                    "Starly": (25, ["day"]),
+                    "Bidoof": (25, ["day"]),
+                    "Budew": (25, ["day"]),
+                    "Shinx": (15, ["day"]),
+                    "Wurmple": (10, ["day"])
+                }
+            else: #time of day = night
+                route_pokemon = {  
+                    "Starly": (25, ["night"]),
+                    "Bidoof": (25, ["night"]),
+                    "Shinx": (15, ["night"]),
+                    "Budew": (15, ["night"]),
+                    "Zubat": (10, ["night"]),
+                    "Kricketot": (10, ["night"])
+                }
+        else: #north
+            if time_of_day == "morning": 
+                route_pokemon = {
+                    "Starly": (25, ["morning"]), 
+                    "Bidoof": (25, ["morning"]),
+                    "Shinx": (15, ["morning"]),
+                    "Budew": (15, ["morning"]),
+                    "Wurmple": (10, ["morning"]),
+                    "Kricketot": (10, ["morning"])
+                }
+            elif time_of_day == "day":
+                route_pokemon = {
+                    "Starly": (25, ["day"]),
+                    "Bidoof": (25, ["day"]),
+                    "Budew": (25, ["day"]),
+                    "Shinx": (15, ["day"]),
+                    "Wurmple": (10, ["day"])
+                }
+            else: #time of day = night
+                route_pokemon = {  
+                    "Starly": (25, ["night"]),
+                    "Bidoof": (25, ["night"]),
+                    "Shinx": (15, ["night"]),
+                    "Budew": (15, ["night"]),
+                    "Zubat": (10, ["night"]),
+                    "Kricketot": (10, ["night"])
+                }
+        return Sinnoh.encounter_pokemon(route_pokemon)       
+
+    @staticmethod
     def route205():
         return
+    @staticmethod
     def route206():
         return
     def route207():
@@ -152,6 +236,12 @@ class Sinnoh:
 #References for calling all the routes when user inputs the identical route number
 @staticmethod
 def sinnohMain():
+    """
+    Prompts user to choose a route from Sinnoh and returns the function associated with that route.
+
+    Returns:
+        function: The function associated with the route the user selected.
+    """
     route_methods = {
         201: Sinnoh.route201,
         202: Sinnoh.route202,
