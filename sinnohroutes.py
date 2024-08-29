@@ -180,12 +180,99 @@ class Sinnoh:
 
     @staticmethod
     def route205():
-        return
+        time_of_day = Sinnoh.grab_user_time()
+
+        print("South or North section of Route 205?")
+        north_south = input().lower()
+
+        if north_south == "south":
+            if time_of_day == "morning" or time_of_day == "day" or time_of_day == "night":
+                route_pokemon = {
+                    "Shellos": (45, ["morning", "day", "night"]), 
+                    "Buizel": (35, ["morning", "day", "night"]),
+                    "Bidoof": (10, ["morning", "day", "night"]),
+                    "Pachirisu": (10, ["morning", "day", "night"]),
+                }
+        else: #north
+            if time_of_day == "morning" or time_of_day == "night":
+                route_pokemon = {
+                    "Bidoof": (30, ["morning"]),
+                    "Budew ": (28, ["morning"]),
+                    "Wurmple": (10, ["morning"]),
+                    "Silcoon": (10, ["morning"]),
+                    "Cascoon": (10, ["morning"]),
+                    "Kricketot": (10, ["morning"]),
+                    "Beautifly": (1, ["morning"]),
+                    "Dustox": (1, ["morning"])
+                }
+            else: #daytime
+                route_pokemon = {
+                    "Budew": (38, ["morning"]),
+                    "Bidoof ": (30, ["morning"]),
+                    "Wurmple": (10, ["morning"]),
+                    "Silcoon": (10, ["morning"]),
+                    "Cascoon": (10, ["morning"]),
+                    "Beautifly": (1, ["morning"]),
+                    "Dustox": (1, ["morning"])
+                }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route206():
-        return
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day == "morning":
+            route_pokemon = {
+                "Geodude": (30, ["morning"]),
+                "Machop": (20, ["morning"]),
+                "Ponyta": (20, ["morning"]),
+                "Gligar": (20, ["morning"]),
+                "Kricketune": (10, ["morning"])
+            }
+        elif time_of_day == "day":
+            route_pokemon = {
+                "Geodude": (30, ["day"]),
+                "Ponyta": (30, ["day"]),
+                "Machop": (20, ["day"]),
+                "Gligar": (20, ["day"])
+            }
+        else: #time of day = night
+            route_pokemon = {
+                "Geodude": (30, ["night"]),
+                "Machop": (20, ["night"]),
+                "Ponyta": (20, ["night"]),
+                "Zubat": (10, ["night"]),
+                "Gligar": (10, ["night"]),
+                "Kricketune": (10, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     def route207():
-        return
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day == "morning":
+            route_pokemon = {
+                "Machop": (35, ["morning"]),
+                "Geodude": (30, ["morning"]),
+                "Ponyta": (25, ["morning"]),
+                "Kricketot": (10, ["morning"])
+            }
+        elif time_of_day == "day":
+            route_pokemon = {
+                "Machop": (45, ["day"]),
+                "Geodude": (30, ["day"]),
+                "Ponyta": (25, ["day"])
+            }
+        else: #time of day = night
+            route_pokemon = {
+                "Machop": (35, ["night"]),
+                "Geodude": (30, ["night"]),
+                "Ponyta": (15, ["night"]),
+                "Zubat": (10, ["night"]),
+                "Kricketot": (10, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     def route208():
         return
     def route209():

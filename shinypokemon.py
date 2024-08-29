@@ -123,6 +123,8 @@ if __name__ == "__main__":
 
 # To do list:
 
+# fix north south looping problem
+# assign a variable that keeps track of current location
 # fix readme
 # add in more routes from sinnoh
 # Add in shiny charm probability
