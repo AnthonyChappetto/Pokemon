@@ -3,7 +3,52 @@ from datetime import datetime # importing py functions
 
 #Represents Sinnoh region and all its routes
 class Sinnoh:
-    
+    #variable to store which part of the route the user is currently exploring
+    user_stored_location = None
+
+    @staticmethod
+    def set_route_cardinal_direction_northsouth(current_route):
+        """
+        Asks user which cardinal direction they are exploring on a route.
+
+        Parameters:
+            current_route (str): The route the user is currently exploring.
+
+        Returns:
+            None
+        """
+        while True:
+            print(f"Which section of {current_route} are you exploring? ('north', 'south')")
+            #converts input to lowercase to match clauses
+            cardinality = input().lower()
+            #checks for valid input
+            if cardinality in ["north", "south"]:
+                Sinnoh.user_stored_location = cardinality
+                break
+            else:
+                print("Invalid choice, Please type a cardinal direction. ('north', 'south')")
+
+    @staticmethod
+    def set_route_cardinal_direction_eastwest(current_route):
+        
+        """
+        Asks user which cardinal direction they are exploring on a route.
+
+        Parameters:
+            current_route (str): The route the user is currently exploring.
+
+        Returns:
+            None
+        """
+        while True:
+            print(f"Which section of {current_route} are you exploring? ('east', 'west')")
+            cardinality = input().lower()
+            if cardinality in ["east", "west"]:
+                Sinnoh.user_stored_location = cardinality
+                break
+            else:
+                print("Invalid choice, Please type a cardinal direction. ('east', 'west')")
+
     @staticmethod
     def grab_user_time():
         """
@@ -50,6 +95,7 @@ class Sinnoh:
         Returns:
             str: The name of the pokemon that was encountered, or "No Pokemon found" if none were found.
         """
+        current_route = "Route 201"
         time_of_day = Sinnoh.grab_user_time()
 
         if time_of_day in ["morning", "night"]: #morning and night have same odds so they're combined
@@ -67,6 +113,7 @@ class Sinnoh:
 
     @staticmethod
     def route202():
+        current_route = "Route 202"
         time_of_day = Sinnoh.grab_user_time()
 
         if time_of_day in ["morning", "night"]: 
@@ -86,6 +133,7 @@ class Sinnoh:
 
     @staticmethod
     def route203():
+        current_route = "Route 203"
         time_of_day = Sinnoh.grab_user_time()
 
         if time_of_day == "morning": 
@@ -117,12 +165,17 @@ class Sinnoh:
     #doesn't work properly handing north and south rn
     @staticmethod
     def route204():
+        current_route = "Route 204"
         time_of_day = Sinnoh.grab_user_time()
 
-        print("South or North section of Route 204?")
-        north_south = input().lower()
+        #Grabs the user's current cardinal direction from their input
+        if not Sinnoh.user_stored_location:
+            Sinnoh.set_route_cardinal_direction_northsouth(current_route)
 
-        if north_south == "south":
+        cardinality = Sinnoh.user_stored_location
+
+        #South section of the routes encounters
+        if cardinality == "south":
             if time_of_day == "morning": 
                 route_pokemon = {
                     "Starly": (25, ["morning"]), 
@@ -180,45 +233,49 @@ class Sinnoh:
 
     @staticmethod
     def route205():
+        current_route = "Route 205"
         time_of_day = Sinnoh.grab_user_time()
 
-        print("South or North section of Route 205?")
-        north_south = input().lower()
+        if not Sinnoh.user_stored_location:
+            Sinnoh.set_route_cardinal_direction_northsouth(current_route)
 
-        if north_south == "south":
-            if time_of_day == "morning" or time_of_day == "day" or time_of_day == "night":
-                route_pokemon = {
-                    "Shellos": (45, ["morning", "day", "night"]), 
-                    "Buizel": (35, ["morning", "day", "night"]),
-                    "Bidoof": (10, ["morning", "day", "night"]),
-                    "Pachirisu": (10, ["morning", "day", "night"]),
-                }
+        cardinality = Sinnoh.user_stored_location
+
+        #South section of the routes encounters
+        if cardinality == "south":
+            route_pokemon = {
+                "Shellos": (45, ["morning", "day", "night"]), 
+                "Buizel": (35, ["morning", "day", "night"]),
+                "Bidoof": (10, ["morning", "day", "night"]),
+                "Pachirisu": (10, ["morning", "day", "night"]),
+            }
         else: #north
-            if time_of_day == "morning" or time_of_day == "night":
+            if time_of_day in ["morning", "night"]:
                 route_pokemon = {
-                    "Bidoof": (30, ["morning"]),
-                    "Budew ": (28, ["morning"]),
-                    "Wurmple": (10, ["morning"]),
-                    "Silcoon": (10, ["morning"]),
-                    "Cascoon": (10, ["morning"]),
-                    "Kricketot": (10, ["morning"]),
-                    "Beautifly": (1, ["morning"]),
-                    "Dustox": (1, ["morning"])
+                    "Bidoof": (30, ["morning", "night"]),
+                    "Budew": (28, ["morning", "night"]),
+                    "Wurmple": (10, ["morning", "night"]),
+                    "Silcoon": (10, ["morning", "night"]),
+                    "Cascoon": (10, ["morning", "night"]),
+                    "Kricketot": (10, ["morning", "night"]),
+                    "Beautifly": (1, ["morning", "night"]),
+                    "Dustox": (1, ["morning", "night"])
                 }
             else: #daytime
                 route_pokemon = {
-                    "Budew": (38, ["morning"]),
-                    "Bidoof ": (30, ["morning"]),
-                    "Wurmple": (10, ["morning"]),
-                    "Silcoon": (10, ["morning"]),
-                    "Cascoon": (10, ["morning"]),
-                    "Beautifly": (1, ["morning"]),
-                    "Dustox": (1, ["morning"])
+                    "Budew": (38, ["day"]),
+                    "Bidoof": (30, ["day"]),
+                    "Wurmple": (10, ["day"]),
+                    "Silcoon": (10, ["day"]),
+                    "Cascoon": (10, ["day"]),
+                    "Beautifly": (1, ["day"]),
+                    "Dustox": (1, ["day"])
                 }
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route206():
+        current_route = "Route 206"
         time_of_day = Sinnoh.grab_user_time()
 
         if time_of_day == "morning":
@@ -248,6 +305,7 @@ class Sinnoh:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route207():
+        current_route = "Route 207"
         time_of_day = Sinnoh.grab_user_time()
 
         if time_of_day == "morning":
@@ -367,13 +425,16 @@ def sinnohMain():
         try:
             print("Choose a route: \n201 202 203\n204 205 206\n207 208 209\n210 211 212\n213 214 215\n216 217 218\n219 220 221\n222 223 224\n225 226 227\n228 229 230")
             route_choice = int(input("Enter route number: "))
+
             #grabs route from route_methods
             route = route_methods.get(route_choice)   
-
             if route:
+                Sinnoh.user_stored_location = None
                 return route
             else:
                 print("Invalid route number. Please choose a valid route.")
         except ValueError:
             #Error checking
             print("Invalid input. Numbers only.")
+
+#Probably going to need a file for just routes because this file is getting too big

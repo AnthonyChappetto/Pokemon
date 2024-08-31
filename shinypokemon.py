@@ -123,10 +123,9 @@ if __name__ == "__main__":
 
 # To do list:
 
-# fix north south looping problem
-# assign a variable that keeps track of current location
 # fix readme
 # add in more routes from sinnoh
+# add in all towns and caves/buildings from sinnoh
 # Add in shiny charm probability
 # Add in other region compatibility
 # Add in individual randomly generated stats for each shiny
