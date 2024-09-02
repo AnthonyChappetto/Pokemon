@@ -1,4 +1,4 @@
-from sinnohroutes import sinnohMain
+from Pokemon.sinnohplatinum import sinnohMain
 import random
 
 def select_region():
@@ -27,9 +27,120 @@ def select_region():
         region_method = region_methods.get(region)
 
         if region_method:
-            return region_method
+            return select_region_version(region)
         else:
             print("Invalid region selected. Please try again.")
+
+def select_region_version(region):
+    print(f'Which version of the {region} region would you like to explore?')
+    match region:
+        case 'kanto':
+            print('Options: Red, Blue, Yellow, Fire Red, Leaf Green, Heart Hold, Soul Silver, Lets Go Pikachu, Lets Go Eevee')
+        case 'johto':
+            print('Options: Gold, Silver, Crystal, Heart Gold, Soul Silver')
+        case 'hoenn':
+            print('Options: Ruby, Sapphire, Emerald, Omega Ruby, Alpha Sapphire')
+        case 'sinnoh':
+            print("Options: Diamond, Pearl, Platinum, Brilliant Diamond, Shining Pearl")
+        case 'unova':
+            print('Options: Black, White, Black2, White2')
+        case 'kalos':
+            print('Options: X, Y')
+        case 'alola':
+            print('Options: Sun, Moon, Ultra Sun, Ultra Moon')
+        case 'galar':
+            print('Options: Sword, Shield')
+    version = input().lower()
+
+    match region:
+        case 'kanto':  
+            match version:
+                case "red":
+                    return #red()
+                case "blue":
+                    return#blue()
+                case "yellow":
+                    return#yellow()
+                case "fire red":
+                    return#fire_red()
+                case "leaf green":
+                    return#leaf_green()
+                case "heart gold":
+                    return#heart_gold()
+                case "soul silver":
+                    return#soul_silver()
+                case "lets go pikachu": 
+                    return#lets_go_pikachu()
+                case "lets go eevee": 
+                    return#lets_go_eevee()
+        case 'johto':
+            match version:
+                case "gold":
+                    return#gold()
+                case "silver":
+                    return#silver()
+                case "crystal":
+                    return#crystal()
+                case "heart gold":
+                    return#heart_gold()
+                case "soul silver":
+                    return#soul_silver()
+        case 'hoenn':
+            match version:
+                case "ruby":
+                    return#ruby()
+                case "sapphire":
+                    return#sapphire()
+                case "emerald":
+                    return#emerald()
+                case "omega ruby":
+                    return#omega_ruby()
+                case "alpha sapphire":
+                    return#alpha_sapphire()
+        case 'sinnoh':
+            match version:
+                case "diamond":
+                    return#diamond()
+                case "pearl":
+                    return#pearl()
+                case "platinum":
+                    return#platinum()
+                case "brilliant diamond":
+                    return#brilliant_diamond()
+                case "shining pearl":
+                    return#shining_pearl()
+        case 'unova':
+            match version:
+                case "black":
+                    return#black()
+                case "white":
+                    return#white()
+                case "black2":
+                    return#black_2()
+                case "white2":
+                    return#white_2()
+        case 'kalos':
+            match version:
+                case "x":
+                    return#x()
+                case "y":
+                    return#y()
+        case 'alola':
+            match version:
+                case "sun":
+                    return#sun()
+                case "moon":
+                    return#moon()
+                case "ultra sun":
+                    return#ultra_sun()
+                case "ultra moon":
+                    return#ultra_moon()
+        case 'galar':
+            match version:
+                case "sword":
+                    return#sword()
+                case "shield":
+                    return#shield()
 
 def hunt_shinies(route_function):
     """
