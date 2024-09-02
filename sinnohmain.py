@@ -90,12 +90,14 @@ class Sinnoh:
 
     @staticmethod
     def sinnohMain():
+        from shinypokemon import select_region_version
         """
         Prompts user to choose a route from Sinnoh and returns the function associated with that route.
 
         Returns:
         function: The function associated with the route the user selected.
         """
+
         route_methods = {
             201: Platinum.route201,
             202: Platinum.route202,

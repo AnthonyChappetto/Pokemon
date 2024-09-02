@@ -19,21 +19,14 @@ def select_region():
             print('Exiting program, goodbye!')
             exit(0)
 
-        select_region_version(region)
-
-        #all of the available regions to hunt in
-        #region_methods = { 
-        #}
-
-        #region_method = region_methods.get(region)
-
-        #if region_method:
-        #    return select_region_version(region)
-        #else:
-        #    print("Invalid region selected. Please try again.")
+        region_method = select_region_version(region)
+        if region_method:
+            return region_method
+        else:
+            print("Invalid region selected. Please try again.")
 
 def select_region_version(region):
-    print(f'Which version of the {region} region would you like to explore?')
+    print(f'\nWhich version of the {region} region would you like to explore?')
     match region:
         case 'kanto':
             print('Options: Red, Blue, Yellow, Fire Red, Leaf Green, Heart Hold, Soul Silver, Lets Go Pikachu, Lets Go Eevee')
@@ -105,7 +98,7 @@ def select_region_version(region):
                 case "pearl":
                     return#pearl()
                 case "platinum":
-                    return Sinnoh.sinnohMain()
+                    return Sinnoh.sinnohMain
                 case "brilliant diamond":
                     return#brilliant_diamond()
                 case "shining pearl":
@@ -225,7 +218,7 @@ def main():
             print_hunt_summary(shiny_num, total_encounters, shinies_found)
             
             #hunting ends through y keystroke
-            print(f"\nKeep hunting on this route y/n")
+            print(f"\nKeep hunting in this region? y/n")
             continueHunting = input().lower()
             if continueHunting != 'y':
                 break
