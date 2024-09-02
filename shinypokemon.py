@@ -1,4 +1,4 @@
-from Pokemon.sinnohplatinum import sinnohMain
+from sinnohmain import Sinnoh
 import random
 
 def select_region():
@@ -19,17 +19,18 @@ def select_region():
             print('Exiting program, goodbye!')
             exit(0)
 
+        select_region_version(region)
+
         #all of the available regions to hunt in
-        region_methods = {
-            'sinnoh': sinnohMain
-        }
+        #region_methods = { 
+        #}
 
-        region_method = region_methods.get(region)
+        #region_method = region_methods.get(region)
 
-        if region_method:
-            return select_region_version(region)
-        else:
-            print("Invalid region selected. Please try again.")
+        #if region_method:
+        #    return select_region_version(region)
+        #else:
+        #    print("Invalid region selected. Please try again.")
 
 def select_region_version(region):
     print(f'Which version of the {region} region would you like to explore?')
@@ -104,7 +105,7 @@ def select_region_version(region):
                 case "pearl":
                     return#pearl()
                 case "platinum":
-                    return#platinum()
+                    return Sinnoh.sinnohMain()
                 case "brilliant diamond":
                     return#brilliant_diamond()
                 case "shining pearl":
@@ -209,25 +210,31 @@ def main():
     Main loop of program. Allows user to select a region, route, and hunt for shiny Pokémon. 
     After each hunt, asks user if they want to continue hunting and if not, allows them to select another region.
     """
-    # Continuously runs the simulation until the user decides to quit  
     while True:
-        #Gets route function from selected region
         region_method = select_region()
+        if not region_method:
+            continue
 
         while True:
             route_function = region_method()
-            if route_function is None:
-                continue
+            if not route_function:
+                break
             
             #simulates hunting and prints a summary
             shiny_num, total_encounters, shinies_found = hunt_shinies(route_function)
             print_hunt_summary(shiny_num, total_encounters, shinies_found)
             
             #hunting ends through y keystroke
-            print(f"\nKeep hunting??? y/n")
+            print(f"\nKeep hunting on this route y/n")
             continueHunting = input().lower()
             if continueHunting != 'y':
-                select_region()
+                break
+
+        print(f"\nWould you like to explore another region? y/n")
+        explore_another_region = input().lower()
+        if explore_another_region != 'y':
+            print("Exiting program, goodbye!")
+            break
 
 if __name__ == "__main__":
     main()

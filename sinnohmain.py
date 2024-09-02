@@ -1,7 +1,9 @@
 import random
 from datetime import datetime # importing py functions
+from sinnohplatinum import Platinum
 
-class Sinnoh:    
+class Sinnoh:  
+
     #variable to store which part of the route the user is currently exploring
     user_stored_location = None
 
@@ -95,36 +97,36 @@ class Sinnoh:
         function: The function associated with the route the user selected.
         """
         route_methods = {
-            201: Sinnoh.route201,
-            202: Sinnoh.route202,
-            203: Sinnoh.route203,
-            204: Sinnoh.route204,
-            205: Sinnoh.route205,
-            206: Sinnoh.route206,
-            207: Sinnoh.route207,
-            208: Sinnoh.route208,
-            209: Sinnoh.route209,
-            210: Sinnoh.route210,
-            211: Sinnoh.route211,
-            212: Sinnoh.route212,
-            213: Sinnoh.route213,
-            214: Sinnoh.route214,
-            215: Sinnoh.route215,
-            216: Sinnoh.route216,
-            217: Sinnoh.route217,
-            218: Sinnoh.route218,
-            219: Sinnoh.route219,
-            220: Sinnoh.route220,
-            221: Sinnoh.route221,
-            222: Sinnoh.route222,
-            223: Sinnoh.route223,
-            224: Sinnoh.route224,
-            225: Sinnoh.route225,
-            226: Sinnoh.route226,
-            227: Sinnoh.route227,
-            228: Sinnoh.route228,
-            229: Sinnoh.route229,
-            230: Sinnoh.route230
+            201: Platinum.route201,
+            202: Platinum.route202,
+            203: Platinum.route203,
+            204: Platinum.route204,
+            205: Platinum.route205,
+            206: Platinum.route206,
+            207: Platinum.route207,
+            208: Platinum.route208,
+            209: Platinum.route209,
+            210: Platinum.route210,
+            211: Platinum.route211,
+            212: Platinum.route212,
+            213: Platinum.route213,
+            214: Platinum.route214,
+            215: Platinum.route215,
+            216: Platinum.route216,
+            217: Platinum.route217,
+            218: Platinum.route218,
+            219: Platinum.route219,
+            220: Platinum.route220,
+            221: Platinum.route221,
+            222: Platinum.route222,
+            223: Platinum.route223,
+            224: Platinum.route224,
+            225: Platinum.route225,
+            226: Platinum.route226,
+            227: Platinum.route227,
+            228: Platinum.route228,
+            229: Platinum.route229,
+            230: Platinum.route230
         }
 
         #Prompts user to choose a route
@@ -134,7 +136,7 @@ class Sinnoh:
                 route_choice = int(input("Enter route number: "))
 
                 #grabs route from route_methods
-                route = route_methods.get(route_choice)   
+                route = route_methods.get(route_choice)
                 if route:
                     Sinnoh.user_stored_location = None
                     return route

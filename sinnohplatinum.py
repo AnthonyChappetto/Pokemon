@@ -1,9 +1,8 @@
-from sinnohmain import Sinnoh
-
 #Represents Sinnoh region and all its routes
-class SinnohPlatinum:
+class Platinum:
     @staticmethod
     def route201():
+        from sinnohmain import Sinnoh
         """
         Simulates an encounter with a wild pokemon on Route 201 in the Sinnoh region.
 
@@ -28,6 +27,7 @@ class SinnohPlatinum:
 
     @staticmethod
     def route202():
+        from sinnohmain import Sinnoh
         current_route = "Route 202"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -48,6 +48,7 @@ class SinnohPlatinum:
 
     @staticmethod
     def route203():
+        from sinnohmain import Sinnoh
         current_route = "Route 203"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -77,9 +78,9 @@ class SinnohPlatinum:
             }
         return Sinnoh.encounter_pokemon(route_pokemon) 
     
-    #doesn't work properly handing north and south rn
     @staticmethod
     def route204():
+        from sinnohmain import Sinnoh
         current_route = "Route 204"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -148,6 +149,7 @@ class SinnohPlatinum:
 
     @staticmethod
     def route205():
+        from sinnohmain import Sinnoh
         current_route = "Route 205"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -190,6 +192,7 @@ class SinnohPlatinum:
         return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route206():
+        from sinnohmain import Sinnoh
         current_route = "Route 206"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -220,6 +223,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route207():
+        from sinnohmain import Sinnoh
         current_route = "Route 207"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -247,6 +251,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route208():
+        from sinnohmain import Sinnoh
         current_route = "Route 208"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -270,6 +275,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route209():
+        from sinnohmain import Sinnoh
         current_route = "Route 209"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -294,6 +300,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route210():
+        from sinnohmain import Sinnoh
         current_route = "Route 210"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -367,6 +374,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route211():
+        from sinnohmain import Sinnoh
         current_route = "Route 211"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -418,6 +426,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route212():
+        from sinnohmain import Sinnoh
         current_route = "Route 212"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -453,6 +462,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route213():
+        from sinnohmain import Sinnoh
         current_route = "Route 213"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -472,6 +482,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route214():
+        from sinnohmain import Sinnoh
         current_route = "Route 214"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -500,6 +511,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route215():
+        from sinnohmain import Sinnoh
         current_route = "Route 215"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -533,6 +545,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route216():
+        from sinnohmain import Sinnoh
         current_route = "Route 216"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -555,6 +568,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route217():
+        from sinnohmain import Sinnoh
         current_route = "Route 217"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -575,6 +589,7 @@ class SinnohPlatinum:
         return Sinnoh.encounter_pokemon(route_pokemon)
 
     def route218():
+        from sinnohmain import Sinnoh
         current_route = "Route 218"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -594,6 +609,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route219():
+        from sinnohmain import Sinnoh
         current_route = "Route 219"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -606,6 +622,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route220():
+        from sinnohmain import Sinnoh
         current_route = "Route 220"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -618,6 +635,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route221():
+        from sinnohmain import Sinnoh
         current_route = "Route 221"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -630,6 +648,7 @@ class SinnohPlatinum:
         
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route222():
+        from sinnohmain import Sinnoh
         current_route = "Route 222"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -657,6 +676,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route223():
+        from sinnohmain import Sinnoh
         current_route = "Route 223"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -668,6 +688,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route224():
+        from sinnohmain import Sinnoh
         current_route = "Route 224"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -698,6 +719,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route225():
+        from sinnohmain import Sinnoh
         current_route = "Route 225"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -723,6 +745,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route226():
+        from sinnohmain import Sinnoh
         current_route = "Route 226"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -747,6 +770,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route227():
+        from sinnohmain import Sinnoh
         current_route = "Route 227"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -776,6 +800,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route228():
+        from sinnohmain import Sinnoh
         current_route = "Route 228"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -800,6 +825,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)
     def route229():
+        from sinnohmain import Sinnoh
         current_route = "Route 229"
         time_of_day = Sinnoh.grab_user_time()
 
@@ -835,6 +861,7 @@ class SinnohPlatinum:
 
         return Sinnoh.encounter_pokemon(route_pokemon)  
     def route230():
+        from sinnohmain import Sinnoh
         current_route = "Route 230"
         time_of_day = Sinnoh.grab_user_time()
 
