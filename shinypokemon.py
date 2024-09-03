@@ -11,14 +11,17 @@ def select_region():
     """
     while True:
         print('\nWhich region would you like to explore?')
-        print('Options: Sinnoh')
-        print('Type 0 to quit')
+        print('Options: Kanto\t Johto\t Hoenn\t Sinnoh\t Unova\t Kalos\t Alola\t Galar')
+        print('\n\nType 0 to quit')
         #converts input to string to match region_method
-        region = input().lower()
+        region = input().lower().replace(" ", "")
 
         if region == '0':
             print('Exiting program, goodbye!')
             exit(0)
+        elif region not in ('kanto', 'johto', 'hoenn', 'sinnoh', 'unova', 'kalos', 'alola', 'galar'):
+            print("Invalid region selected. Please try again.")
+            break
 
         region_method = select_region_version(region)
         if region_method:
@@ -47,38 +50,40 @@ def select_region_version(region):
         case 'sinnoh':
             print("Options: Diamond, Pearl, Platinum, Brilliant Diamond, Shining Pearl")
         case 'unova':
-            print('Options: Black, White, Black2, White2')
+            print('Options: Black, White, Black 2, White 2')
         case 'kalos':
             print('Options: X, Y')
         case 'alola':
             print('Options: Sun, Moon, Ultra Sun, Ultra Moon')
         case 'galar':
             print('Options: Sword, Shield')
-    version = input().lower()
+        case _:
+            print("Invalid region selected. Please try again.")
+    version = input().lower().replace(" ", "")
     set_version(version)
 
     match region:
         case 'kanto':  
             match version:
-                case "red" | "blue" | "yellow" | "fire red" | "leaf green" | "heart gold" | "soul silver" | "lets go pikachu" | "lets go eevee":
+                case "red" | "blue" | "yellow" | "firered" | "leafgreen" | "heartgold" | "soulsilver" | "letsgopikachu" | "letsgoeevee":
                     return #red()
                 case _:
                     print("Invalid version selected. Please try again.")
         case 'johto':
             match version:
-                case "gold" | "silver" | "crystal" | "heart gold" | "soul silver":
+                case "gold" | "silver" | "crystal" | "heartgold" | "soulsilver":
                     return#gold()
                 case _:
                     print("Invalid version selected. Please try again.")
         case 'hoenn':
             match version:
-                case "ruby" | "sapphire" | "emerald" | "omega ruby" | "alpha sapphire":
+                case "ruby" | "sapphire" | "emerald" | "omegaruby" | "alphasapphire":
                     return#ruby()
                 case _:
                     print("Invalid version selected. Please try again.")
         case 'sinnoh':
             match version:
-                case "diamond" | "pearl" | "platinum" | "brilliant diamond" | "shining pearl":
+                case "diamond" | "pearl" | "platinum" | "brilliantdiamond" | "shiningpearl":
                     return Sinnoh.sinnohMain
                 case _:
                     print("Invalid version selected. Please try again.")
@@ -96,7 +101,7 @@ def select_region_version(region):
                     print("Invalid version selected. Please try again.")
         case 'alola':
             match version:
-                case "sun" | "moon" | "ultra sun" | "ultra moon":
+                case "sun" | "moon" | "ultrasun" | "ultramoon":
                     return#sun()
                 case _:
                     print("Invalid version selected. Please try again.")
