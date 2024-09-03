@@ -1,4 +1,4 @@
-#Represents Sinnoh region and all its routes
+#Represents Sinnoh region and all its routes for platinum
 class Platinum:
     @staticmethod
     def route201():

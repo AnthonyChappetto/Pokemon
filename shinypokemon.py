@@ -27,6 +27,15 @@ def select_region():
             print("Invalid region selected. Please try again.")
 
 def select_region_version(region):
+    """
+    Asks user which version of the given region they want to explore, sets the version, and returns the region method associated with the selected version.
+
+    Parameters:
+        region (str): The region the user wants to explore.
+
+    Returns:
+        function: The method associated with the region the user selected.
+    """
     print(f'\nWhich version of the {region} region would you like to explore?')
     match region:
         case 'kanto':
@@ -51,92 +60,52 @@ def select_region_version(region):
     match region:
         case 'kanto':  
             match version:
-                case "red":
+                case "red" | "blue" | "yellow" | "fire red" | "leaf green" | "heart gold" | "soul silver" | "lets go pikachu" | "lets go eevee":
                     return #red()
-                case "blue":
-                    return#blue()
-                case "yellow":
-                    return#yellow()
-                case "fire red":
-                    return#fire_red()
-                case "leaf green":
-                    return#leaf_green()
-                case "heart gold":
-                    return#heart_gold()
-                case "soul silver":
-                    return#soul_silver()
-                case "lets go pikachu": 
-                    return#lets_go_pikachu()
-                case "lets go eevee": 
-                    return#lets_go_eevee()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'johto':
             match version:
-                case "gold":
+                case "gold" | "silver" | "crystal" | "heart gold" | "soul silver":
                     return#gold()
-                case "silver":
-                    return#silver()
-                case "crystal":
-                    return#crystal()
-                case "heart gold":
-                    return#heart_gold()
-                case "soul silver":
-                    return#soul_silver()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'hoenn':
             match version:
-                case "ruby":
+                case "ruby" | "sapphire" | "emerald" | "omega ruby" | "alpha sapphire":
                     return#ruby()
-                case "sapphire":
-                    return#sapphire()
-                case "emerald":
-                    return#emerald()
-                case "omega ruby":
-                    return#omega_ruby()
-                case "alpha sapphire":
-                    return#alpha_sapphire()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'sinnoh':
             match version:
-                case "diamond":
-                    return#diamond()
-                case "pearl":
-                    return#pearl()
-                case "platinum":
+                case "diamond" | "pearl" | "platinum" | "brilliant diamond" | "shining pearl":
                     return Sinnoh.sinnohMain
-                case "brilliant diamond":
-                    return#brilliant_diamond()
-                case "shining pearl":
-                    return#shining_pearl()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'unova':
             match version:
-                case "black":
+                case "black" | "white" | "black2" | "white2":
                     return#black()
-                case "white":
-                    return#white()
-                case "black2":
-                    return#black_2()
-                case "white2":
-                    return#white_2()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'kalos':
             match version:
-                case "x":
+                case "x" | "y":
                     return#x()
-                case "y":
-                    return#y()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'alola':
             match version:
-                case "sun":
+                case "sun" | "moon" | "ultra sun" | "ultra moon":
                     return#sun()
-                case "moon":
-                    return#moon()
-                case "ultra sun":
-                    return#ultra_sun()
-                case "ultra moon":
-                    return#ultra_moon()
+                case _:
+                    print("Invalid version selected. Please try again.")
         case 'galar':
             match version:
-                case "sword":
+                case "sword" | "shield":
                     return#sword()
-                case "shield":
-                    return#shield()
+                case _:
+                    print("Invalid version selected. Please try again.")    
 
 def hunt_shinies(route_function):
     """
@@ -237,7 +206,8 @@ if __name__ == "__main__":
 # To do list:
 
 # fix readme
-# add in more routes from sinnoh
+
+# add in all versions of each region
 # add in all towns and caves/buildings from sinnoh
 # Add in shiny charm probability
 # Add in other region compatibility
