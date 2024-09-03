@@ -21,7 +21,26 @@ class Diamond:
     
     @staticmethod
     def route202():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 202"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day in ["morning", "night"]:
+            route_pokemon = {
+                "Starly": (30, ["morning","night"]), 
+                "Bidoof": (30, ["morning", "night"]),
+                "Shinx": (30, ["morning", "night"]),
+                "Kricketot": (10, ["morning", "night"])
+            }
+        else: #time of day = day
+            route_pokemon = {
+                "Starly": (40, ["day"]),
+                "Bidoof": (30, ["day"]),
+                "Shinx": (30, ["day"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route203():
         return
