@@ -1,4 +1,5 @@
 from sinnohmain import Sinnoh
+from shared import set_version
 import random
 
 def select_region():
@@ -45,6 +46,7 @@ def select_region_version(region):
         case 'galar':
             print('Options: Sword, Shield')
     version = input().lower()
+    set_version(version)
 
     match region:
         case 'kanto':  

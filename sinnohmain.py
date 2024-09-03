@@ -1,6 +1,7 @@
 import random
 from datetime import datetime # importing py functions
 from sinnohplatinum import Platinum
+from shared import get_version
 
 class Sinnoh:  
 
@@ -98,38 +99,41 @@ class Sinnoh:
         function: The function associated with the route the user selected.
         """
 
-        route_methods = {
-            201: Platinum.route201,
-            202: Platinum.route202,
-            203: Platinum.route203,
-            204: Platinum.route204,
-            205: Platinum.route205,
-            206: Platinum.route206,
-            207: Platinum.route207,
-            208: Platinum.route208,
-            209: Platinum.route209,
-            210: Platinum.route210,
-            211: Platinum.route211,
-            212: Platinum.route212,
-            213: Platinum.route213,
-            214: Platinum.route214,
-            215: Platinum.route215,
-            216: Platinum.route216,
-            217: Platinum.route217,
-            218: Platinum.route218,
-            219: Platinum.route219,
-            220: Platinum.route220,
-            221: Platinum.route221,
-            222: Platinum.route222,
-            223: Platinum.route223,
-            224: Platinum.route224,
-            225: Platinum.route225,
-            226: Platinum.route226,
-            227: Platinum.route227,
-            228: Platinum.route228,
-            229: Platinum.route229,
-            230: Platinum.route230
-        }
+        version = get_version()
+        match version:
+            case "platinum":
+                route_methods = {
+                    201: Platinum.route201,
+                    202: Platinum.route202,
+                    203: Platinum.route203,
+                    204: Platinum.route204,
+                    205: Platinum.route205,
+                    206: Platinum.route206,
+                    207: Platinum.route207,
+                    208: Platinum.route208,
+                    209: Platinum.route209,
+                    210: Platinum.route210,
+                    211: Platinum.route211,
+                    212: Platinum.route212,
+                    213: Platinum.route213,
+                    214: Platinum.route214,
+                    215: Platinum.route215,
+                    216: Platinum.route216,
+                    217: Platinum.route217,
+                    218: Platinum.route218,
+                    219: Platinum.route219,
+                    220: Platinum.route220,
+                    221: Platinum.route221,
+                    222: Platinum.route222,
+                    223: Platinum.route223,
+                    224: Platinum.route224,
+                    225: Platinum.route225,
+                    226: Platinum.route226,
+                    227: Platinum.route227,
+                    228: Platinum.route228,
+                    229: Platinum.route229,
+                    230: Platinum.route230
+                }
 
         #Prompts user to choose a route
         while True:
