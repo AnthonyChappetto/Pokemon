@@ -289,13 +289,168 @@ class Diamond:
         return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route210():
-        return
+        from sinnohmain import Sinnoh
+        current_route = "Route 210"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if not Sinnoh.user_stored_location:
+            Sinnoh.set_route_cardinal_direction_northsouth(current_route)
+
+        cardinality = Sinnoh.user_stored_location
+
+        #South section of the routes encounters
+        if cardinality == "south":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Geodude": (30, ["morning"]),
+                        "Ponyta": (30, ["morning"]),
+                        "Mime Jr.": (25, ["morning"]),
+                        "Kricketune": (10, ["morning"]),
+                        "Chansey": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Ponyta": (50, ["day"]),
+                        "Geodude": (30, ["day"]),
+                        "Kricketune": (10, ["day"]),
+                        "Chansey": (5, ["day"]),
+                        "Mime Jr.": (5, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Ponyta": (30, ["night"]),
+                        "Kricketune": (30, ["night"]),
+                        "Mime Jr.": (25, ["night"]),
+                        "Geodude": (10, ["night"]),
+                        "Chansey": (5, ["night"])
+                    }
+        #North section of the routes encounters
+        elif cardinality == "north":
+            if time_of_day in ["morning", "day"]:
+                route_pokemon = {
+                    "Meditite": (30, ["morning", "day"]),
+                    "Psyduck": (20, ["morning", "day"]),
+                    "Machop": (20, ["morning", "day"]),
+                    "Bibarel": (20, ["morning", "day"]),
+                    "Machoke": (10, ["morning", "day"])
+                }
+            else: #night
+                route_pokemon = {
+                    "Psyduck": (20, ["night"]),
+                    "Meditite": (20, ["night"]),
+                    "Bibarel": (20, ["night"]),
+                    "Machop": (10, ["night"]),
+                    "Machoke": (10, ["night"]),
+                    "Hoothoot": (10, ["night"]),
+                    "Noctowl": (10, ["night"])
+                }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route211():
-        return
+        from sinnohmain import Sinnoh
+        current_route = "Route 211"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if not Sinnoh.user_stored_location:
+            Sinnoh.set_route_cardinal_direction_eastwest(current_route)
+
+        cardinality = Sinnoh.user_stored_location
+
+        if cardinality == "east":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Meditite": (35, ["morning", "day"]),
+                        "Machoke": (20, ["morning", "day"]),
+                        "Graveler": (20, ["morning", "day"]),
+                        "Ponyta": (15, ["morning", "day"]),
+                        "Chingling": (10, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Meditite": (35, ["night"]),
+                        "Graveler": (20, ["night"]),
+                        "Machoke": (10, ["night"]),
+                        "Chingling": (10, ["night"]),
+                        "Zubat": (10, ["night"]),
+                        "Noctowl": (10, ["night"]),
+                        "Ponyta": (5, ["night"])
+                    }
+        else: #west
+            if time_of_day in ["morning", "day"]:
+                route_pokemon = {
+                    "Meditite": (35, ["morning", "day"]),
+                    "Bidoof": (20, ["morning", "day"]),
+                    "Geodude": (20, ["morning", "day"]),
+                    "Ponyta": (15, ["morning", "day"]),
+                    "Chingling": (10, ["morning", "day"])
+                }
+            else: #night
+                route_pokemon = {
+                    "Meditite": (35, ["night"]),
+                    "Bidoof": (25, ["night"]),
+                    "Geodude": (10, ["night"]),
+                    "Ponyta": (10, ["night"]),
+                    "Chingling": (10, ["night"]),
+                    "Zubat": (10, ["night"]),
+                    "Hoothoot": (10, ["night"])
+                }                
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route212():
-        return
+        from sinnohmain import Sinnoh
+        current_route = "Route 212"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if not Sinnoh.user_stored_location:
+            Sinnoh.set_route_cardinal_direction_northsouth(current_route)
+
+        cardinality = Sinnoh.user_stored_location
+
+        #South section of the routes encounters
+        if cardinality == "south":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Bibarel": (35, ["morning", "day"]),
+                        "Wooper": (30, ["morning", "day"]),
+                        "Roselia": (25, ["morning", "day"]),
+                        "Kricketune": (10, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Wooper": (35, ["night"]),
+                        "Kricketune": (20, ["night"]),
+                        "Bibarel": (20, ["night"]),
+                        "Roselia": (10, ["night"])
+                    }
+        else: #north
+            if time_of_day == "morning":
+                route_pokemon = {
+                    "Budew": (30, ["morning"]),
+                    "Starly": (20, ["morning"]),
+                    "Kricketune": (20, ["morning"]),
+                    "Staravia": (15, ["morning"]),
+                    "Roselia": (15, ["morning"])
+                }
+            elif time_of_day == "day":
+                route_pokemon = {
+                    "Budew": (30, ["day"]),
+                    "Staravia": (25, ["day"]),
+                    "Starly": (20, ["day"]),
+                    "Roselia": (15, ["day"]),
+                    "Kricketune": (10, ["day"])
+                }
+            else: #night
+                route_pokemon = {
+                    "Kricketune": (30, ["night"]),
+                    "Budew": (30, ["night"]),
+                    "Starly": (20, ["night"]),
+                    "Roselia": (15, ["night"]),
+                    "Staravia": (5, ["night"])
+                }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route213():
         return
