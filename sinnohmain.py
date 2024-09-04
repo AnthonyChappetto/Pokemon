@@ -111,6 +111,11 @@ class Sinnoh:
                     , 221: Diamond.route221, 222: Diamond.route222, 223: Diamond.route223, 224: Diamond.route224, 225: Diamond.route225
                     , 226: Diamond.route226, 227: Diamond.route227, 228: Diamond.route228, 229: Diamond.route229, 230: Diamond.route230
                 }
+            case "pearl":
+                route_methods = {
+                    201: Diamond.route201, 202: Diamond.route202, 203: Diamond.route203, 204: Diamond.route204, 205: Diamond.route205, 
+                    207: Diamond.route207, 208: Diamond.route208 #206Pearl #209Pearl
+                }
             case "platinum":
                 route_methods = {
                     201: Platinum.route201, 202: Platinum.route202, 203: Platinum.route203, 204: Platinum.route204, 205: Platinum.route205
@@ -120,7 +125,6 @@ class Sinnoh:
                     , 221: Platinum.route221, 222: Platinum.route222, 223: Platinum.route223, 224: Platinum.route224, 225: Platinum.route225
                     , 226: Platinum.route226, 227: Platinum.route227, 228: Platinum.route228, 229: Platinum.route229, 230: Platinum.route230
                 }
-
         #Prompts user to choose a route
         while True:
             try:
