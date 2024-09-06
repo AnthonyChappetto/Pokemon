@@ -114,8 +114,9 @@ class Sinnoh:
             case "pearl":
                 route_methods = {
                     201: Diamond.route201, 202: Diamond.route202, 203: Diamond.route203, 204: Diamond.route204, 205: Diamond.route205, 
-                    207: Diamond.route207, 208: Diamond.route208, 211: Diamond.route211 #206Pearl #209Pearl #210Pearl #212Pearl
-                }
+                    207: Diamond.route207, 208: Diamond.route208, 211: Diamond.route211, 213: Diamond.route213 #206Pearl #209Pearl #210Pearl #212Pearl #Pearl 214 #Pearl216 #Pearl 218 #Pearl 221 #Pearl 222
+                    , 215: Diamond.route215, 217: Diamond.route217, 219: Diamond.route219, 220: Diamond.route220, 223: Diamond.route223
+                } 
             case "platinum":
                 route_methods = {
                     201: Platinum.route201, 202: Platinum.route202, 203: Platinum.route203, 204: Platinum.route204, 205: Platinum.route205
