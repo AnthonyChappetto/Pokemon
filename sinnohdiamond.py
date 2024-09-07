@@ -691,22 +691,187 @@ class Diamond:
         return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route224():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 224"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day in ["morning", "day"]:
+            route_pokemon = {
+                "Roselia": (20, ["morning", "day"]),
+                "Floatzel": (20, ["morning", "day"]),
+                "Gastrodon": (20, ["morning", "day"]),
+                "Chatot": (20, ["morning", "day"]),
+                "Gloom": (5, ["morning", "day"]),
+                "Weepinbell": (5, ["morning", "day"]),
+                "Beautifly": (5, ["morning", "day"]),
+                "Buizel": (4, ["morning", "day"]),
+                "Shellos": (1, ["morning", "day"])
+            }
+        else:
+            route_pokemon = {
+                "Floatzel": (30, ["night"]),
+                "Gastrodon": (30, ["night"]),
+                "Roselia": (20, ["night"]),
+                "Gloom": (5, ["night"]),
+                "Weepinbell": (5, ["night"]),
+                "Beautifly": (5, ["night"]),
+                "Buizel": (4, ["night"]),
+                "Shellos": (1, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route225():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 225"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day in ["morning", "day"]:
+            route_pokemon = {
+                "Fearow": (40, ["morning", "day"]),
+                "Raticate": (30, ["morning", "day"]),
+                "Skuntank": (10, ["morning", "day"]),
+                "Rattata": (5, ["morning", "day"]),
+                "Spearow": (5, ["morning", "day"]),
+                "Machoke": (5, ["morning", "day"]),
+                "Roselia": (5, ["morning", "day"])
+            }
+        else:
+            route_pokemon = {
+                "Raticate": (30, ["night"]),
+                "Fearow": (20, ["night"]),
+                "Banette": (20, ["night"]),
+                "Skuntank": (10, ["night"]),
+                "Rattata": (5, ["night"]),
+                "Spearow": (5, ["night"]),
+                "Machoke": (5, ["night"]),
+                "Roselia": (5, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route226():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 226"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day in ["morning", "day"]:
+            route_pokemon = {
+                "Fearow": (40, ["morning", "day"]),
+                "Raticate": (30, ["morning", "day"]),
+                "Golduck": (10, ["morning", "day"]),
+                "Machoke": (10, ["morning", "day"]),
+                "Rattata": (5, ["morning", "day"]),
+                "Spearow": (5, ["morning", "day"])
+            }
+        else:
+            route_pokemon = {
+                "Raticate": (30, ["night"]),
+                "Fearow": (20, ["night"]),
+                "Banette": (20, ["night"]),
+                "Golduck": (10, ["night"]),
+                "Machoke": (10, ["night"]),
+                "Rattata": (5, ["night"]),
+                "Spearow": (5, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route227():
-        return
-    @staticmethod
-    def route228():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 227"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day in ["morning", "day"]:
+            route_pokemon = {
+                "Fearow": (20, ["morning", "day"]),
+                "Rhydon": (20, ["morning", "day"]),
+                "Camerupt": (20, ["morning", "day"]),
+                "Graveler": (15, ["morning", "day"]),
+                "Weezing": (10, ["morning", "day"]),
+                "Rhyhorn": (5, ["morning", "day"]),
+                "Skarmory": (5, ["morning", "day"]),
+                "Numel": (5, ["morning", "day"])
+            }
+        else:
+            route_pokemon = {
+                "Rhydon": (20, ["night"]),
+                "Camerupt": (20, ["night"]),
+                "Fearow": (10, ["night"]),
+                "Weezing": (10, ["night"]),
+                "Golbat": (10, ["night"]),
+                "Banette": (10, ["night"]),
+                "Graveler": (5, ["night"]),
+                "Rhyhorn": (5, ["night"]),
+                "Skarmory": (5, ["night"]),
+                "Numel": (5, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route229():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 229"
+        time_of_day = Sinnoh.grab_user_time()
+
+        if time_of_day == "morning":
+            route_pokemon = {
+                "Gloom": (20, ["morning"]),
+                "Weepinbell": (20, ["morning"]),
+                "Ledian": (20, ["morning"]),
+                "Illumise": (10, ["morning"]),
+                "Roselia": (10, ["morning"]),
+                "Oddish": (5, ["morning"]),
+                "Bellsprout": (5, ["morning"]),
+                "Scyther": (5, ["morning"]),
+                "Volbeat": (5, ["morning"])
+            }
+        elif time_of_day == "day":
+            route_pokemon = {
+                "Gloom": (30, ["day"]),
+                "Weepinbell": (30, ["day"]),
+                "Illumise": (10, ["day"]),
+                "Roselia": (10, ["day"]),
+                "Oddish": (5, ["day"]),
+                "Bellsprout": (5, ["day"]),
+                "Scyther": (5, ["day"]),
+                "Volbeat": (5, ["day"])
+            }
+        else:
+            route_pokemon = {
+                "Gloom": (20, ["night"]),
+                "Weepinbell": (20, ["night"]),
+                "Ariados": (20, ["night"]),
+                "Illumise": (10, ["night"]),
+                "Roselia": (10, ["night"]),
+                "Oddish": (5, ["night"]),
+                "Bellsprout": (5, ["night"]),
+                "Scyther": (5, ["night"]),
+                "Volbeat": (5, ["night"])
+            }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
     @staticmethod
     def route230():
-        return
+        from sinnohmain import Sinnoh
+
+        current_route = "Route 230"
+        time_of_day = Sinnoh.grab_user_time()
+            
+        route_pokemon = {
+            "Gloom": (20, ["morning", "day", "night"]),
+            "Weepinbell": (20, ["morning", "day", "night"]),
+            "Floatzel": (13, ["morning", "day", "night"]),
+            "Oddish": (11, ["morning", "day", "night"]),
+            "Bellsprout": (11, ["morning", "day", "night"]),
+            "Golduck": (10, ["morning", "day", "night"]),
+            "Beautifly": (10, ["morning", "day", "night"]),
+            "Gastrodon": (5, ["morning", "day", "night"])
+        }
+
+        return Sinnoh.encounter_pokemon(route_pokemon)
