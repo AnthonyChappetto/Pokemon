@@ -1,4 +1,5 @@
 from sinnohmain import Sinnoh
+from unovamain import Unova
 from shared import set_version
 import random
 
@@ -90,7 +91,7 @@ def select_region_version(region):
         case 'unova':
             match version:
                 case "black" | "white" | "black2" | "white2":
-                    return#black()
+                    return Unova.unovaMain
                 case _:
                     print("Invalid version selected. Please try again.")
         case 'kalos':
