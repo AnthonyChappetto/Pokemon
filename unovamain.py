@@ -49,7 +49,7 @@ class Unova:
                 if version in ["black", "white"]:
                     print("Choose a route: \n1 2 3\n4 5 6\n7 8 9\n10 11 12\n13 14 15\n16 17 18")
                 elif version in ["black2", "white2"]:
-                    print("Choose a route: \n1 2 3\n4 5 6\n7 8 9\n10 11 12\n13 14 15\n16 17 18\n19 20 21\n22 23")
+                    print("Choose a route: \n1 2 3\n4 5 6\n7 8 9\n11 12 13\n14 15 16\n17 18 19\n20 21 22\n23")
 
                 route_choice = int(input("Enter route number: "))
                 route = route_methods.get(route_choice)
