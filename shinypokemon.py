@@ -1,3 +1,4 @@
+from johtomain import Johto
 from sinnohmain import Sinnoh
 from unovamain import Unova
 from shared import set_version
@@ -73,7 +74,7 @@ def select_region_version(region):
         case 'johto':
             match version:
                 case "gold" | "silver" | "crystal" | "heartgold" | "soulsilver":
-                    return#gold()
+                    return Johto.johtoMain
                 case _:
                     print("Invalid version selected. Please try again.")
         case 'hoenn':
