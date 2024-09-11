@@ -37,3 +37,20 @@ def grab_users_month():
         season = "winter"
 
     return season
+
+def grab_user_time():
+    """
+    Grabs the user's current time and returns a string representing the current time of day.
+
+    Returns:
+        str: The current time of day, either "morning", "day", or "night".
+    """
+    now = datetime.now()    #grabs user datetime from built in py function
+    current_hour = now.hour #grabs exact hour and places in current hour
+
+    if 20 <= current_hour or current_hour < 4: #8:00pm to 3:59am
+        return "night"
+    elif 4 <= current_hour < 10: #4am to 9:59am
+        return "morning"
+    else:   #10AM to 7:59pm
+        return "day"
