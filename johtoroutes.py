@@ -115,10 +115,234 @@ class GoldSilver:
         return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route31():
-        return
+        current_route = "Route 31"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "gold":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Caterpie": (35, ["morning", "day"]),
+                        "Pidgey": (30, ["morning", "day"]),
+                        "Bellsprout": (20, ["morning", "day"]),
+                        "Metapod": (15, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Rattata": (40, ["night"]),
+                        "Spinarak": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Hoothoot": (10, ["night"])
+                    }
+            case "soulsilver":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Weedle": (30, ["morning"]),
+                        "Ledyba": (30, ["morning"]),
+                        "Bellsprout": (20, ["morning"]),
+                        "Kakuna": (10, ["morning"]),
+                        "Pidgey": (10, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Weedle": (35, ["day"]),
+                        "Pidgey": (30, ["day"]),
+                        "Bellsprout": (20, ["day"]),
+                        "Kakuna": (15, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Hoothoot": (40, ["night"]),
+                        "Rattata": (40, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                    }
+            case "crystal":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Ledyba": (30, ["morning"]),
+                        "Caterpie": (30, ["morning"]),
+                        "Bellsprout": (20, ["morning"]),
+                        "Pidgey": (10, ["morning"]),
+                        "Weedle": (5, ["morning"]),
+                        "Hoppip": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Pidgey": (40, ["day"]),
+                        "Caterpie": (30, ["day"]),
+                        "Bellsprout": (20, ["day"]),
+                        "Weedle": (5, ["day"]),
+                        "Hoppip": (5, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Spinarak": (30, ["night"]),
+                        "Poliwag": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Hooothoot": (10, ["night"]),
+                        "Zubat": (5, ["night"]),
+                        "Gastly": (5, ["night"])
+                    }
+            case "silver":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Weedle": (35, ["morning"]),
+                        "Ledyba": (30, ["morning"]),
+                        "Bellsprout": (20, ["morning"]),
+                        "Pidgey": (15, ["morning"]),
+                        "Kakuna": (10, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Weedle": (35, ["day"]),
+                        "Pidgey": (30, ["day"]),
+                        "Bellsprout": (20, ["day"]),
+                        "Kakuna": (15, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Hoothoot": (40, ["night"]),
+                        "Rattata": (40, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                    }
+            case _:
+                print("Invalid version selected. Please try again.")
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route32():
-        return
+        current_route = "Route 32"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Rattata": (35, ["morning"]),
+                        "Bellsprout": (30, ["morning"]),
+                        "Mareep": (20, ["morning"]),
+                        "Hoppip": (10, ["morning"]),
+                        "Zubat": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Rattata": (40, ["day"]),
+                        "Bellsprout": (30, ["day"]),
+                        "Mareep": (20, ["day"]),
+                        "Hoppip": (10, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Wooper": (35, ["night"]),
+                        "Rattata": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Mareep": (10, ["night"]),
+                        "Zubat": (5, ["night"])
+                    }
+            case "soulsilver":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Ekans": (30, ["morning"]),
+                        "Bellsprout": (30, ["morning"]),
+                        "Mareep": (20, ["morning"]),
+                        "Hoppip": (10, ["morning"]),
+                        "Rattata": (5, ["morning"]),
+                        "Zubat": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Ekans": (30, ["day"]),
+                        "Bellsprout": (30, ["day"]),
+                        "Mareep": (20, ["day"]),
+                        "Hoppip": (10, ["day"]),
+                        "Rattata": (10, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Wooper": (35, ["night"]),
+                        "Ekans": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Mareep": (10, ["night"]),
+                        "Zubat": (5, ["night"])
+                    }
+            case "gold":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Rattata": (35, ["morning"]),
+                        "Bellsprout": (30, ["morning"]),
+                        "Mareep": (20, ["morning"]),
+                        "Hoppip": (10, ["morning"]),
+                        "Wooper": (4, ["morning"]),
+                        "Zubat": (1, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Rattata": (40, ["day"]),
+                        "Bellsprout": (30, ["day"]),
+                        "Mareep": (20, ["day"]),
+                        "Hoppip": (10, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Wooper": (35, ["night"]),
+                        "Rattata": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Mareep": (10, ["night"]),
+                        "Zubat": (5, ["night"])
+                    }
+            case "silver":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Bellsprout": (30, ["morning"]),
+                        "Ekans": (30, ["morning"]),
+                        "Mareep": (20, ["morning"]),
+                        "Hoppip": (10, ["morning"]),
+                        "Rattata": (5, ["morning"]),
+                        "Wooper": (4, ["morning"]),
+                        "Zubat": (1, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Bellsprout": (30, ["day"]),
+                        "Ekans": (30, ["day"]),
+                        "Mareep": (20, ["day"]),
+                        "Hoppip": (10, ["day"]),
+                        "Rattata": (10, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Wooper": (35, ["night"]),
+                        "Ekans": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Mareep": (10, ["night"]),
+                        "Zubat": (5, ["night"])
+                    }
+            case "crystal":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Rattata": (30, ["morning", "day"]),
+                        "Ekans": (30, ["morning", "day"]),
+                        "Bellsprout": (20, ["morning", "day"]),
+                        "Hoppip": (15, ["morning", "day"]),
+                        "Pidgey": (5, ["morning", "day"])  
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Wooper": (30, ["night"]),
+                        "Rattata": (30, ["night"]),
+                        "Bellsprout": (20, ["night"]),
+                        "Zubat": (10, ["night"]),
+                        "Hoothoot": (5, ["night"]),
+                        "Gastly": (5, ["night"])
+                    }
+            case _:
+                print("It should be impossibl to reach here.")
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route33():
         return
