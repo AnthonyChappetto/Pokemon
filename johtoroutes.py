@@ -345,7 +345,55 @@ class GoldSilver:
         return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route33():
-        return
+        current_route = "Route 33"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "gold":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Rattata": (40, ["morning"]),
+                        "Hoppip": (35, ["morning"]),
+                        "Spearow": (20, ["mornkng"]),
+                        "Zubat": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Rattata": (45, ["day"]),
+                        "Hoppip": (35, ["day"]),
+                        "Spearow": (20, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Rattata": (60, ["night"]),
+                        "Zubat": (40, ["night"])
+                    }
+            case "soulsilver":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Hoppip": (35, ["morning"]),
+                        "Ekans": (30, ["morning"]),
+                        "Spearow": (20, ["morning"]),
+                        "Rattata": (10, ["morning"]),
+                        "Zubat": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Hoppip": (35, ["day"]),
+                        "Ekans": (30, ["day"]),
+                        "Spearow": (20, ["day"]),
+                        "Rattata": (10, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Rattata": (60, ["night"]),
+                        "Zubat": (40, ["night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
+
     @staticmethod
     def route34():
         return
