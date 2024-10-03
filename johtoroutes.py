@@ -390,10 +390,46 @@ class GoldSilver:
                         "Rattata": (60, ["night"]),
                         "Zubat": (40, ["night"])
                     }
+            case "silver":
+                if time_of_day == "morning":
+                    route_pokemon = {
+                        "Hoppip": (35, ["morning"]),
+                        "Ekans": (30, ["morning"]),
+                        "Spearow": (20, ["morning"]),
+                        "Rattata": (10, ["morning"]),
+                        "Zubat": (5, ["morning"])
+                    }
+                elif time_of_day == "day":
+                    route_pokemon = {
+                        "Hoppip": (35, ["day"]),
+                        "Ekans": (30, ["day"]),
+                        "Spearow": (20, ["day"]),
+                        "Rattata": (15, ["day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Zubat": (40, ["night"]),
+                        "Rattata": (30, ["night"]),
+                        "Ekans": (30, ["night"])
+                    }
+            case "crystal":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Rattata": (30, ["morning", "day"]),
+                        "Spearow": (30, ["morning", "day"]),
+                        "Geodude": (20, ["morning", "day"]),
+                        "Hoppip": (15, ["morning", "day"]),
+                        "Ekans": (5, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Zubat": (40, ["night"]),
+                        "Rattata": (40, ["night"]),
+                        "Geodude": (20, ["night"])
+                    }
 
         from johtomain import Johto
         return Johto.encounter_pokemon(route_pokemon)
-
     @staticmethod
     def route34():
         return
