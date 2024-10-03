@@ -432,7 +432,42 @@ class GoldSilver:
         return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route34():
-        return
+        current_route = "Route 34"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "soulsilver" | "gold" | "silver":
+                if time_of_day in ["morning", "day", "night"]:
+                    route_pokemon = {
+                        "Drowzee": (50, ["morning", "day", "night"]),
+                        "Rattata": (35, ["morning", "day", "night"]),
+                        "Abra": (10, ["morning", "day", "night"]),
+                        "Ditto": (5, ["morning", "day", "night"])
+                    }
+            case "crystal":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Snubbull": (30, ["morning", "day"]),
+                        "Rattata": (30, ["morning", "day"]),
+                        "Pidgey": (20, ["morning", "day"]),
+                        "Abra": (10, ["morning", "day"]),
+                        "Jigglypuff": (5, ["morning", "day"]),
+                        "Ditto": (5, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Drowzee": (30, ["night"]),
+                        "Rattata": (30, ["night"]),
+                        "Hoothoot": (20, ["night"]),
+                        "Abra": (10, ["night"]),
+                        "Jigglypuff": (5, ["night"]),
+                        "Ditto": (5, ["night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
+
     @staticmethod
     def route35():
         return
