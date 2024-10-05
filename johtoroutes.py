@@ -470,7 +470,56 @@ class GoldSilver:
 
     @staticmethod
     def route35():
-        return
+        current_route = "Route 35"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "soulsilver" | "gold" | "silver":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Nidoran_F": (30, ["morning", "day"]),
+                        "Nidoran_M": (30, ["morning", "day"]),
+                        "Drowzee": (20, ["morning", "day"]),
+                        "Abra": (10, ["morning", "day"]),
+                        "Pidgey": (5, ["morning", "day"]),
+                        "Ditto": (4, ["morning", "day"]),
+                        "Yanma": (1, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Nidoran_F": (30, ["night"]),
+                        "Nidoran_M": (30, ["night"]),
+                        "Drowzee": (20, ["night"]),
+                        "Abra": (10, ["night"]),
+                        "Hoothoot": (5, ["night"]),
+                        "Ditto": (4, ["night"]),
+                        "Yanma": (1, ["night"])
+                    }
+            case "crystal":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Pidgey": (30, ["morning", "day"]),
+                        "Snubbull": (30, ["morning", "day"]),
+                        "Growlithe": (20, ["morning", "day"]),
+                        "Abra": (10, ["morning", "day"]),
+                        "Jigglypuff": (5, ["morning", "day"]),
+                        "Ditto": (4, ["morning", "day"]),
+                        "Yanma": (1, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Drowzee": (30, ["night"]),
+                        "Hoothoot": (30, ["night"]),
+                        "Psyduck": (20, ["night"]),
+                        "Abra": (10, ["night"]),
+                        "Jigglypuff": (5, ["night"]),
+                        "Ditto": (4, ["night"]),
+                        "Yanma": (1, ["night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route36():
         return
