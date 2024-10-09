@@ -1,6 +1,7 @@
 from johtomain import Johto
 from sinnohmain import Sinnoh
 from unovamain import Unova
+from kalosmain import Kalos
 from shared import set_version
 import random
 
@@ -98,7 +99,7 @@ def select_region_version(region):
         case 'kalos':
             match version:
                 case "x" | "y":
-                    return#x()
+                    return Kalos.kalosMain
                 case _:
                     print("Invalid version selected. Please try again.")
         case 'alola':
