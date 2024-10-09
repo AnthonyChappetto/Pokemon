@@ -709,16 +709,180 @@ class GoldSilver:
         return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route38():
-        return
+        current_route = "Route 38"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "gold":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Rattata": (30, ["morning", "day"]),
+                        "Raticate": (30, ["morning", "day"]),
+                        "Magnemite": (20, ["morning", "day"]),
+                        "Farfetch'd": (10, ["morning", "day"]),
+                        "Miltank": (5, ["morning", "day"]),
+                        "Tauros": (4, ["morning", "day"]),
+                        "Snubull": (1, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Rattata": (40, ["night"]),
+                        "Raticate": (30, ["night"]),
+                        "Magnemite": (20, ["night"]),
+                        "Miltank": (5, ["night"]),
+                        "Tauros": (4, ["night"]),
+                        "Snubull": (1, ["night"])
+                    }
+            case "soulsilver" | "silver":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Raticate": (30, ["morning", "day"]),
+                        "Meowth": (30, ["morning", "day"]),
+                        "Magnemite": (20, ["morning", "day"]),
+                        "Farfetch'd": (10, ["morning", "day"]),
+                        "Miltank": (5, ["morning", "day"]),
+                        "Tauros": (4, ["morning", "day"]),
+                        "Snubull": (1, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Meowth": (40, ["night"]),
+                        "Raticate": (30, ["night"]),
+                        "Magnemite": (20, ["night"]),
+                        "Miltank": (5, ["night"]),
+                        "Tauros": (4, ["night"]),
+                        "Snubull": (1, ["night"])
+                    }
+            case "crystal":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Rattata": (30, ["morning", "day"]),
+                        "Raticate": (30, ["morning", "day"]),
+                        "Magnemite": (20, ["morning", "day"]),
+                        "Pidgeotto": (10, ["morning", "day"]),
+                        "Miltank": (5, ["morning", "day"]),
+                        "Tauros": (5, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Meowth": (40, ["night"]),
+                        "Raticate": (30, ["night"]),
+                        "Magnemite": (20, ["night"]),
+                        "Noctowl": (10, ["night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
+
     @staticmethod
     def route39():
-        return
+        current_route = "Route 39"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "gold":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Rattata": (30, ["morning", "day"]),
+                        "Raticate": (30, ["morning", "day"]),
+                        "Magnemite": (20, ["morning", "day"]),
+                        "Farfetch'd": (10, ["morning", "day"]),
+                        "Miltank": (5, ["morning", "day"]),
+                        "Tauros": (5, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Rattata": (40, ["night"]),
+                        "Raticate": (30, ["night"]),
+                        "Magnemite": (20, ["night"]),
+                        "Miltank": (5, ["night"]),
+                        "Tauros": (5, ["night"])
+                    }
+            case "soulsilver" | "silver":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Raticate": (30, ["morning", "day"]),
+                        "Meowth": (30, ["morning", "day"]),
+                        "Magnemite": (20, ["morning", "day"]),
+                        "Farfetch'd": (10, ["morning", "day"]),
+                        "Miltank": (5, ["morning", "day"]),
+                        "Tauros": (5, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Meowth": (40, ["night"]),
+                        "Raticate": (30, ["night"]),
+                        "Magnemite": (20, ["night"]),
+                        "Miltank": (5, ["night"]),
+                        "Tauros": (5, ["night"])
+                    }
+            case "crystal":
+                if time_of_day in ["morning", "day"]:
+                    route_pokemon = {
+                        "Rattata": (30, ["morning", "day"]),
+                        "Raticate": (30, ["morning", "day"]),
+                        "Magnemite": (20, ["morning", "day"]),
+                        "Pidgeotto": (10, ["morning", "day"]),
+                        "Miltank": (5, ["morning", "day"]),
+                        "Tauros": (5, ["morning", "day"])
+                    }
+                else: #night
+                    route_pokemon = {
+                        "Meowth": (40, ["night"]),
+                        "Raticate": (30, ["night"]),
+                        "Magnemite": (20, ["night"]),
+                        "Noctowl": (10, ["night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route40():
-        return
+        current_route = "Route 40"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "soulsilver" | "gold" | "silver" | "crystal":
+                if time_of_day in ["morning", "day", "night"]:
+                    route_pokemon = {
+                        "Tentacool": (90, ["morning", "day", "night"]),
+                        "Tentacruel": (10, ["morning", "day", "night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route41():
-        return
+        current_route = "Route 41"
+        version = get_version()
+        time_of_day = grab_user_time()
+
+        match version:
+            case "heartgold" | "gold" | "crystal":
+                if time_of_day in ["morning", "day", "night"]:
+                    route_pokemon = {
+                        "Tentacool": (60, ["morning", "day", "night"]),
+                        "Tentacruel": (30, ["morning", "day", "night"]),
+                        "Mantine": (10, ["morning", "day", "night"])
+                    }
+            case "soulsilver":
+                if time_of_day in ["morning", "day", "night"]:
+                    route_pokemon = {
+                        "Tentacool": (60, ["morning", "day", "night"]),
+                        "Tentacruel": (40, ["morning", "day", "night"])
+                    }
+            case "silver":
+                if time_of_day in ["morning", "day", "night"]:
+                    route_pokemon = {
+                        "Tentacool": (70, ["morning", "day", "night"]),
+                        "Tentacruel": (30, ["morning", "day", "night"])
+                    }
+
+        from johtomain import Johto
+        return Johto.encounter_pokemon(route_pokemon)
     @staticmethod
     def route42():
         return
