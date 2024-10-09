@@ -33,7 +33,7 @@ class Johto:
         Returns:
         function: The function associated with the route the user selected.
         """
-
+        
         route_methods = {
             29: GoldSilver.route29, 30: GoldSilver.route30, 31: GoldSilver.route31, 32: GoldSilver.route32, 33: GoldSilver.route33, 34: GoldSilver.route34,
             35: GoldSilver.route35, 36: GoldSilver.route36, 37: GoldSilver.route37, 38: GoldSilver.route38, 39: GoldSilver.route39, 40: GoldSilver.route40,
@@ -44,7 +44,10 @@ class Johto:
         #Prompts user to choose a route
         while True:
             try:
-                print("Choose a route: \n29 30 31\n32 33 34\n35 36 37\n38 39 40\n41 42 43\n44 45 46\n47 48")
+                if get_version() in ["gold", "silver", "crystal"]:
+                    print("Choose a route: \n29 30 31\n32 33 34\n35 36 37\n38 39 40\n41 42 43\n44 45 46")
+                elif get_version() in ["heartgold", "soulsilver"]:
+                    print("Choose a route: \n29 30 31\n32 33 34\n35 36 37\n38 39 40\n41 42 43\n44 45 46\n47 48")
 
                 route_choice = int(input("Enter route number: "))
                 route = route_methods.get(route_choice)
