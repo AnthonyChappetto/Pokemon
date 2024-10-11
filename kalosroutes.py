@@ -27,8 +27,18 @@ class XY:
         return Kalos.encounter_pokemon(route_pokemon)
     @staticmethod
     def route3():
-        pass
+        current_route = "Route 3"
+        version = get_version()
 
+        match version:
+            case "x" | "y":
+                route_pokemon = {
+                    "Bidoof": 20, "Bunnelby": 20, "Fletchling": 20, "Pidgey": 10,
+                    "Azurill": 10, "Burmy": 10, "Pikachu": 5, "Dunsparce": 5
+                }
+
+        from kalosmain import Kalos
+        return Kalos.encounter_pokemon(route_pokemon)
     @staticmethod
     def route4():
         pass
